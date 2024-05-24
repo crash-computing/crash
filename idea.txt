@@ -1,0 +1,35 @@
+(
+	import(std.println),
+	import(std.string),
+	
+	main = (
+		println("Executing main function"),
+
+		x[example_override] = example_override(),
+
+		z[example] = x,
+		
+		z.example_function("Some text"),
+
+		y[example_override.another_function] = x.another_function(),
+	),
+
+	example = (
+		
+		example_function { content[string] } = (
+			println("Default impl of example_function prints: {content}")
+		)
+
+	),
+
+	example_override[example] = (
+		
+		example_function { content[string] } = (
+			println("Override impl of example_function prints: {content}")
+		),
+
+		another_function = (
+
+		)
+	)
+)
