@@ -1,35 +1,33 @@
-(
-	import(std.println),
-	import(std.string),
-	
-	main = (
-		println("Executing main function"),
+import(Std:Println),
+import(Std:String),
 
-		x[example_override] = example_override(),
+Main = (
+	Println("Executing main function"),
 
-		z[example] = x,
+	x[ExampleOverride] = ExampleOverride(),
+
+	z[Example] = x,
 		
-		z.example_function("Some text"),
+	z.ExampleFunction("Some text"),
 
-		y[example_override.another_function] = x.another_function(),
+	y[ExampleOverride.AnotherFunction] = x.AnotherFunction(),
+),
+
+Example = (
+		
+	ExampleFunction { content[String] } = (
+		Println("Default impl of example_function prints: {content}")
+	)
+
+),
+
+ExampleOverride[Example] = (
+		
+	ExampleFunction { content[String] } = (
+		Println("Override impl of example_function prints: {content}")
 	),
 
-	example = (
-		
-		example_function { content[string] } = (
-			println("Default impl of example_function prints: {content}")
-		)
+	AnotherFunction = (
 
-	),
-
-	example_override[example] = (
-		
-		example_function { content[string] } = (
-			println("Override impl of example_function prints: {content}")
-		),
-
-		another_function = (
-
-		)
 	)
 )
