@@ -1,0 +1,14 @@
+Println = std::out::Println,
+
+main() = (
+  
+),
+
+mod test {
+  main = super::main,
+  
+  #[test]
+  test_main() = (
+     main(),
+  )
+},
