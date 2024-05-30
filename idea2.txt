@@ -4,7 +4,7 @@ main() = (
   
 ),
 
-mod test {
+test {
   main = super::main,
   
   #[test]
