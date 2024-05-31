@@ -1,0 +1,30 @@
+string := std::string,
+
+std::string() = (
+    
+    getLength() = 2,
+
+),
+
+io := std::io,
+
+
+io::println(string[string]) = (
+    
+),
+
+
+someEnum() = (
+
+    Value1() = (),
+
+    Value2() = (),
+
+),
+
+testEnumValue[someEnum.Value1] = someEnum().Value1(),
+
+theEnum[someEnum] = someEnum(),
+
+theEnum.Value2(),
+
