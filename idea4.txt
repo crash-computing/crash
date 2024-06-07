@@ -1,47 +1,52 @@
 screen | `std/screen`
-image | `screen/image`
-resizeable_image | `screen/resizeable_image`
+Image | `screen/Image`
+ResizeableImage | `screen/ResizeableImage`
 test(ctx) | `this/is/some/alias(ctx)`
 
 
-image := ( width[u16], height[u16] ) #[333] {
+Image = {
 
-    copy := [~] ()
+    copy;
+
+    get_height[u16];
+
+    get_width[u16];
+}
+
+ResizeableImage[Image] = {
+
+    resize_to (width[u16], height[u16]);
 
 }
 
-resizeable_image := [image] () #[333] {
 
-    resize_to := [~] (width[u16], height[u16])
+StaticImage [Image] (width[u16], height[u16]) = {
+
+    copy = {
+        ~(width, height);
+    }
+
+    get_height[u16] = height;
+
+    get_width[u16] = width;
 
 }
 
-
-image ( width[u16], height[u16] ) : (
-
-    copy[~] () : ~(width, height);
-
-)
-
-resizeable_image[image] () : (
-
+DynamicImage [ResizeableImage] = {
     width[u16] = 0;
-    height[i16] = 0;
+    height[u16] = 0;
 
-    resize_to ( width[u16], height[u16] ) : (
+    copy () = {
+        ~(width, height);
+    }
+
+    resize_to (width[u16], height[u16]) = {
         ~.width = width;
-        ~.height = height
-    )
+        ~.height = height;
+        @ ~
+    }
 
-    copy[~] () : (
-        new_image[~] = ~();
+    get_height[u16] = height;
 
-        new_image.resize_to(width, height);
-
-        @new_image
-    )
-
-  
-)
-
-
+    get_width[u16] = width;
+}
