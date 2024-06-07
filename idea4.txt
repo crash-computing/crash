@@ -1,0 +1,47 @@
+screen | `std/screen`
+image | `screen/image`
+resizeable_image | `screen/resizeable_image`
+test(ctx) | `this/is/some/alias(ctx)`
+
+
+image := ( width[u16], height[u16] ) #[333] {
+
+    copy := [~] ()
+
+}
+
+resizeable_image := [image] () #[333] {
+
+    resize_to := [~] (width[u16], height[u16])
+
+}
+
+
+image ( width[u16], height[u16] ) : (
+
+    copy[~] () : ~(width, height);
+
+)
+
+resizeable_image[image] () : (
+
+    width[u16] = 0;
+    height[i16] = 0;
+
+    resize_to ( width[u16], height[u16] ) : (
+        ~.width = width;
+        ~.height = height
+    )
+
+    copy[~] () : (
+        new_image[~] = ~();
+
+        new_image.resize_to(width, height);
+
+        @new_image
+    )
+
+  
+)
+
+
