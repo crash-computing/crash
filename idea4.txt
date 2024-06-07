@@ -1,7 +1,7 @@
-screen | `std/screen`
-Image | `screen/Image`
-ResizeableImage | `screen/ResizeableImage`
-test(ctx) | `this/is/some/alias(ctx)`
+screen | <std/screen>
+Image | <screen/Image>
+ResizeableImage | <screen/ResizeableImage>
+test(ctx) | <this/is/some/alias(ctx)>
 
 
 Image = {
