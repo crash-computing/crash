@@ -32,6 +32,10 @@ StaticImage [Image] (width[u16], height[u16]) = {
 
 }
 
+if ($n^condition[bool]...) {$n^bodies} = {
+    
+}
+
 DynamicImage [ResizeableImage] = {
     width[u16] = 0;
     height[u16] = 0;
@@ -44,6 +48,12 @@ DynamicImage [ResizeableImage] = {
         ~.width = width;
         ~.height = height;
         @ ~
+    }
+
+    is_large[bool] = {
+
+        if (width > 1000 && height > 1000) 
+
     }
 
     get_height[u16] = height;
