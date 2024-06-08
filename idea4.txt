@@ -32,7 +32,7 @@ StaticImage [Image] (width[u16], height[u16]) = {
 
 }
 
-if ($n^condition[bool]...) {$n^bodies} = {
+if (condition[bool^$n]...) {bodies^$n} = {
     
 }
 
