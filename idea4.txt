@@ -2,7 +2,7 @@ screen | <std/screen>
 Image | <screen/Image>
 ResizeableImage | <screen/ResizeableImage>
 test(ctx) | <this/is/some/alias(ctx)>
-
+Json | <json/Json?>
 
 Image = {
 
@@ -14,15 +14,42 @@ Image = {
 }
 
 ResizeableImage[Image] = {
+    load()
 
     resize_to (width[u16], height[u16]);
 
+}
+
+Optional<T> (val[T?]) {
+
+    exists[bool] = val != null;
+
+    unwrap_or[T] (other[T]) = {
+        if (val == null) {
+            @ other
+        }
+        `@ *val`
+    }
+
+    expect[T] (msg[string]) = {
+        if (val == null) {
+            
+        }
+    }
 }
 
 
 StaticImage [Image] (width[u16], height[u16]) = {
 
     copy = {
+        if (!exists(Json)) {
+            @ null
+        }
+
+        
+
+        json[Json]
+
         ~(width, height);
     }
 
