@@ -53,4 +53,4 @@ Crash is purely functional, but more about that later.
 Now think about files - Why don't we replace files with functions?
 Why don't we make everything a function?! Let that sink in for a second..
 
-[Let's jump to the programming language!](language)
+[Let's jump to the programming language!](./language)
