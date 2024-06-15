@@ -235,4 +235,21 @@ test_something = {
 }
 ```
 
+## Low-Level-Crash
+
+We need a way to talk with our processor or
+else everything is useless. Like how are we going to implement
+our if-statement? It looks like "modern" Assembly.
+
+```crash
+if (condition[bool]) {body} = {
+    <{
+        move(ax, condition);
+        test(ax, ax);
+        return_if_zero();
+    }>
+
+    body();
+}
+```
 
