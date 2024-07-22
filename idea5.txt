@@ -19,11 +19,17 @@ import [
     loop {
 
     }
-}
+},
+
+var(String, java.lang.String[Package])
+
+var(test, "Hi")
 
 {
     var,
-    (%name, )
+    (%name, $val[%type])
+} = {    
+    ´%type %name = $val;´
 }
 
 {
@@ -32,5 +38,3 @@ import [
 } = {
 
 }
-
-

@@ -1,0 +1,9 @@
+package com.uroria.core;
+
+class Test {
+    
+    public void printHelloWorld() {
+        System.out.println("Hello world!");
+    }
+    
+}

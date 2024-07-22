@@ -1,0 +1,38 @@
+{
+    package,
+    (%name)
+} = {
+    ´package `%name`;\n´
+},
+
+{
+    class,
+    (%name),
+    { *body }
+} = {
+    ´´
+    class `%name` {
+        `*body`
+    }  
+    ´´
+},
+
+{
+    print,
+    ($content[%object])
+} = {
+    ´System.out.println(`$content`);\n´
+},
+
+{
+    fn,
+    ()
+} = {
+
+},
+
+package(com.uroria.core),
+
+class(Test) {
+
+},
