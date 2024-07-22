@@ -1,0 +1,36 @@
+import [
+
+]
+
+{
+    import,
+    [paths[Path]]
+} = {
+    for ()
+}
+
+{
+    for,
+    ($val[%type] : $[iterable[%type]]),
+    { *body($val[%type]]) }
+} = {
+
+
+    loop {
+
+    }
+}
+
+{
+    var,
+    (%name, )
+}
+
+{
+    loop,
+    { *body }
+} = {
+
+}
+
+
