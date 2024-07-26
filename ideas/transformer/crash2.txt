@@ -1,0 +1,97 @@
+def getter () = {
+
+},
+
+def setter () = {
+
+},
+
+
+def fn[Function] {
+
+} = {
+
+}
+
+blueprint Entity = {
+
+    fn get_uuid[Uuid] = ?,
+
+    fn get_name[string] = ?
+
+},
+
+fn Position (x[i128], y[i32], z[i128]) = {
+    getter(x),
+    getter(y),
+    getter(z),
+    setter(x),
+    setter(y),
+    setter(z)
+},
+
+fn Player[Entity] (uuid[Uuid], name[string]) = {
+
+    var position[Position] = Position(0, 0, 0),
+    var locale[Locale] = Locale("en"),
+
+    fn set_position (x[i128], y[i32], z[i128]) = {
+        position = Position(x, y, z)
+    },
+
+    fn send_message (message[String]) = {
+        // impl
+    },
+
+
+
+    fn get_locale[Locale] = {
+
+        @locale   
+    },
+
+    getter(uuid),
+    getter(name)
+},
+
+
+
+
+{
+    package,
+    (%name)
+} = {
+    ´package `%name`;\n´
+},
+
+{
+    class,
+    (%name),
+    { *body }
+} = {
+    ´´
+    class `%name` {
+        `*body`
+    }  
+    ´´
+},
+
+{
+    print,
+    ($content[%object])
+} = {
+    ´System.out.println(`$content`);\n´
+},
+
+{
+    fn,
+    ()
+} = {
+
+},
+
+package(com.uroria.core),
+
+class(Test) {
+
+},
